@@ -1,0 +1,23 @@
+<div>
+    <h1>Productos</h1>
+  
+    <form (ngSubmit)="agregarProducto()">
+      <input [(ngModel)]="nuevoProducto.nombre" name="nombre" placeholder="Nombre" required />
+      <input [(ngModel)]="nuevoProducto.precio" name="precio" placeholder="Precio" type="number" required />
+      <input [(ngModel)]="nuevoProducto.codigo" name="codigo" placeholder="Código" required />
+      <label>
+        Descuento:
+        <input [(ngModel)]="nuevoProducto.descuento" name="descuento" type="checkbox" />
+      </label>
+      <button type="submit">Agregar Producto</button>
+    </form>
+  
+    <h2>Contador de Productos: {{ count }}</h2>
+  
+    <ul>
+      <li *ngFor="let producto of productos">
+        {{ producto.nombre }} - ${{ producto.precio }} - {{ producto.codigo }} - Descuento: {{ producto.descuento ? 'Sí' : 'No' }}
+      </li>
+    </ul>
+  </div>
+  
